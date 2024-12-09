@@ -2,12 +2,9 @@
 #include <stdio.h>
 
 int main(void) {
-  pin_mode(13, HIGH);
+  serial_begin(9600);
   while (1) {
-    digital_write(13, HIGH);
-    DELAY_MS(1000);
-
-    digital_write(13, LOW);
+    serial_print("Hello World!\r\n");
     DELAY_MS(1000);
   }
   return 0;
